@@ -28,6 +28,7 @@ module Website
     config.generators do |g|
       g.test_framework nil
       g.helper false
+      g.skip_routes true
     end
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
