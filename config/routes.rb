@@ -12,8 +12,12 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
+  resources :themes, only: [:show]
+
   scope 'back', module: 'back', as: 'admin' do
     get '', to: 'dashboard#index', as: '/'
+
+    resources :themes, except: [:show]
   end
 
 
