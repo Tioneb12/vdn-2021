@@ -1,0 +1,12 @@
+<%= simple_form_for [:admin,@theme], data: { turbo: false }  do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :slug %>
+  <%= f.input :statut %>
+  <%= f.input :meta_title %>
+  <%= f.input :meta_description %>
+  <%= f.input :meta_robots_index %>
+  <%= f.input :meta_robots_follow %>
+  <%= f.submit "Enregister" %>
+<% end %>
