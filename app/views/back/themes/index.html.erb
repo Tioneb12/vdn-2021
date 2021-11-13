@@ -8,7 +8,10 @@
           <%= theme.title %> -
           <%= link_to "Edit", edit_admin_theme_path(theme.slug) %> -
           <%= link_to "Show", theme_path(theme.slug) %> -
-          <%= link_to "Destroy", admin_theme_path(theme.slug), method: :delete %>
+          <%= link_to "Destroy", admin_theme_path(theme.slug),
+                      data: { "turbo-method": :delete,
+                              confirm: "Etes vous sur de vouloir supprimer cet article ?"}
+          %>
         </li>
       <% end %>
     </ul>

@@ -29,7 +29,7 @@ class Back::ThemesController < BackController
   end
 
   def destroy
-    @theme.destroy!
+    @theme.destroy
     redirect_to admin_themes_path
   end
 
