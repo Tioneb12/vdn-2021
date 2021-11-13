@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  scope 'back', module: 'back', as: 'admin' do
+    get '', to: 'dashboard#index', as: '/'
+  end
+
 
   # Almost every application defines a route for the root path ("/") at the top of this file.
   # root "articles#index"
