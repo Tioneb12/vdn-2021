@@ -197,10 +197,15 @@ GEM
     tailwindcss-rails (0.5.1)
       rails (>= 6.0.0)
     thor (1.1.0)
+    tinymce-rails (5.10.1)
+      railties (>= 3.1.1)
     turbo-rails (0.8.3)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    view_component (2.43.1)
+      activesupport (>= 5.0.0, < 8.0)
+      method_source (~> 1.0)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -237,9 +242,11 @@ DEPENDENCIES
   simple_form
   simple_form_tailwind_css
   stimulus-rails (>= 0.4.0)
-  tailwindcss-rails (>= 0.4.3)
+  tailwindcss-rails (>= 0.5.1)
+  tinymce-rails
   turbo-rails (>= 0.7.11)
   tzinfo-data
+  view_component
   web-console (>= 4.1.0)
   webdrivers
 

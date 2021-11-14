@@ -22,7 +22,7 @@ gem "turbo-rails", ">= 0.7.11"
 gem "stimulus-rails", ">= 0.4.0"
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails", ">= 0.4.3"
+gem "tailwindcss-rails", ">= 0.5.1"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder", "~> 2.7"
@@ -38,6 +38,8 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'route_translator'
 gem 'simple_form'
 gem 'simple_form_tailwind_css'
+gem 'tinymce-rails'
+gem "view_component", require: "view_component/engine"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
