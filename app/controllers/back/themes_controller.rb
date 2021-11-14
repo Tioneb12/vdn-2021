@@ -48,7 +48,8 @@ class Back::ThemesController < BackController
       :meta_robots_follow,
       :meta_title,
       :meta_description,
-      :statut
+      :statut,
+      :main_image
     )
   end
 end

@@ -1,4 +1,21 @@
+<% content_for :meta_tags do %>
+  <%= render MetaTagsComponent.new(meta_robots_index: @theme.meta_robots_index,
+                                   meta_robots_follow: @theme.meta_robots_follow,
+                                   meta_title: @theme.meta_title,
+                                   meta_description: @theme.meta_description,
+                                   meta_type: "Article",
+                                   meta_image: (url_for(@theme.main_image) if @theme.main_image.attached?)
+  ) %>
+<% end %>
+
+
 <div>
   <h1 class="text-xl font-bold">Themes#show</h1>
   <p>Find me in app/views/themes/show.html.erb</p>
+
+  <h1 class="text-xl"><%= @theme.title %></h1>
+  <% if @theme.main_image.attached? %>
+    <%= image_tag @theme.main_image %>
+  <% end %>
+  <p><%= @theme.description %></p>
 <div>
