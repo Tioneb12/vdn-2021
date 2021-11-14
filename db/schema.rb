@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_14_000254) do
+ActiveRecord::Schema.define(version: 2021_11_14_013615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2021_11_14_000254) do
   create_table "themes", force: :cascade do |t|
     t.string "meta_title"
     t.string "meta_description"
-    t.string "meta_image"
     t.boolean "meta_robots_index"
     t.boolean "meta_robots_follow"
     t.string "title"
