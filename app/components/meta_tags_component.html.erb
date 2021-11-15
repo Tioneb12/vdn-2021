@@ -1,0 +1,21 @@
+<%= render RobotsComponent.new(meta_robots_index: @meta_robots_index, meta_robots_follow: @meta_robots_follow) %>
+<title><%= @meta_title %></title>
+<meta name="description" content="<%= @meta_description %>">
+
+<!-- Open Graph data -->
+<meta property="fb:pages" content="" />
+<meta name= "title" property="og:title" content="<%= @meta_title %>">
+<meta name= "description" property="og:description" content="<%= @meta_description %>">
+<meta name= "image" property="og:image" content="<%= @meta_image %>">
+<meta property="og:type" content="<%= @meta_type %>"/>
+<meta property="og:url" content="<%= request.original_url %>"/>
+<meta property="og:site_name" content="Van de nomades"/>
+<meta property="fb:app_id" content=""/>
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="<%= @meta_title %>">
+<meta name="twitter:description" content="<%= @meta_description %>">
+<meta name="twitter:creator" content="">
+<meta name="twitter:image:src" content="<%= @meta_image %>">

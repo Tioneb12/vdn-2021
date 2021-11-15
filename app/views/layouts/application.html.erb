@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Website</title>
+    <meta name="robots" content="noindex, nofollow">
+    <% if content_for?(:meta_tags) %>
+      <%#= yield :meta_tags %>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="robots" content="noindex, nofollow">
     <%= stylesheet_link_tag "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
