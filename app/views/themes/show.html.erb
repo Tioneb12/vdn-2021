@@ -17,5 +17,5 @@
   <% if @theme.main_image.attached? %>
     <%= image_tag @theme.main_image %>
   <% end %>
-  <p><%= @theme.description %></p>
-<div>
+  <p><%= @theme.description.html_safe %></p>
+</div>

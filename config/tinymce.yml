@@ -1,0 +1,28 @@
+toolbar:
+  - styleselect | bold italic | undo redo | formatselect | paste | fullscreen
+  - alignleft aligncenter alignright alignjustify | bullist numlist outdent indent
+  - image | link
+  - file | edit | view | insert | format | tools | codesample
+plugins:
+  - lists
+  - paste
+  - image
+  - link
+  - code
+  - table
+  - wordcount
+  - autoresize
+  - fullscreen
+  - codesample
+codesample_global_prismjs: true
+images_upload_url: '/uploader/image'
+autoresize_min_height: 350
+relative_urls : false
+remove_script_host : false
+convert_urls : true
+codesample_languages: [
+  { text: 'HTML/XML', value: 'markup' },
+  { text: 'JavaScript', value: 'javascript' },
+  { text: 'CSS', value: 'css' },
+  { text: 'Ruby', value: 'ruby' },
+]

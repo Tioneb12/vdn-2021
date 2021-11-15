@@ -1,9 +1,11 @@
-<%= simple_form_for [:admin,@theme], data: { turbo: false }  do |f| %>
+<%= simple_form_for [:admin,@theme] do |f| %>
   <%= f.error_notification %>
   <%= f.input :title %>
-  <%= f.input :main_image %>
+  <%= f.input :main_image,
+              direct_upload: true,
+              accept: 'image/png,image/gif,image/jpeg' %>
   <%= tinymce %>
-  <%= f.input :description, as: :text, input_html: { class: "tinymce" , rows: 40, cols: 120 } %>
+  <%= f.input :description, as: :text, input_html: { class: "tinymce" , rows: 40, cols: 120 }, data: { turbo: false } %>
   <%= f.input :slug %>
   <%= f.input :statut %>
   <%= f.input :meta_title %>
