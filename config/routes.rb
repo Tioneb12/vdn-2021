@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     get '', to: 'dashboard#index', as: '/'
 
     resources :themes, except: [:show]
+
+    resources :users do
+      resources :posts, except: [:show], shallow: true
+    end
   end
 
 
