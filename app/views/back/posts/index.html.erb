@@ -1,0 +1,20 @@
+<div>
+  <h1 class="text-xl font-bold">Back::Posts#index</h1>
+  <p>Find me in app/views/back/posts/index.html.erb</p>
+    <div>
+      <ul>
+        <% @posts.each do |post| %>
+          <li>
+            <%= post.title %> -
+            <%= link_to "Edit", edit_admin_post_path(post.slug) %> -
+            <%#= link_to "Show", post_path(post.slug) %> -
+            <%= link_to "Destroy", admin_post_path(post.slug),
+                        data: { "turbo-method": :delete,
+                                confirm: "Etes vous sur de vouloir supprimer cet article ?"}
+            %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to "Créer un nouvel article", new_admin_user_post_path(@user) %>
+    </div>
+  </div>

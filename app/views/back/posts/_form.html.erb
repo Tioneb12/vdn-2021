@@ -1,0 +1,22 @@
+<%= @post.errors.full_messages.first if @post.errors.any? %>
+
+<%= simple_form_for [:admin,@user,@post] do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title %>
+  <%= f.input :main_image,
+              direct_upload: true,
+              accept: 'image/png,image/gif,image/jpeg' %>
+  <%= tinymce %>
+  <%= f.input :body, as: :text, input_html: { class: "tinymce" , rows: 40, cols: 120 } %>
+  <%= f.input :slug %>
+  <%= f.input :statut %>
+  <%= f.association :themes, as: :select, collection: Theme.all, input_html: { multiple: true } %>
+  <%= f.date_field :created_at %>
+  <%= f.date_field :updated_at %>
+  <%= f.input :user_id, input_html: { value: @post.user || @user.id } %>
+  <%= f.input :meta_title %>
+  <%= f.input :meta_description %>
+  <%= f.input :meta_robots_index %>
+  <%= f.input :meta_robots_follow %>
+  <%= f.submit "Enregister" %>
+<% end %>
