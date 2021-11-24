@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   post 'uploader/image', to: 'uploader#image'
   resources :themes, only: [:show]
+  resources :posts, only: [:show]
 
   scope 'back', module: 'back', as: 'admin' do
     get '', to: 'dashboard#index', as: '/'
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
     resources :themes, except: [:show]
 
     resources :users do
-      resources :posts, except: [:show], shallow: true
+      resources :posts, except: [:show]
     end
   end
 

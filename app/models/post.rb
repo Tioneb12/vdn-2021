@@ -6,6 +6,8 @@ class Post < ApplicationRecord
   has_many :post_themes, dependent: :destroy
   has_many :themes, through: :post_themes
 
+  has_rich_text :body
+
   private
 
   def should_generate_new_friendly_id?

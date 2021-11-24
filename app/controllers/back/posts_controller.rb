@@ -1,5 +1,5 @@
 class Back::PostsController < BackController
-  before_action :set_user, only: [:index, :new, :create]
+  before_action :set_user
   before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
@@ -25,7 +25,7 @@ class Back::PostsController < BackController
 
   def update
     if @post.update(post_params)
-      redirect_to admin_user_posts(@user)
+      redirect_to admin_user_posts_path(@user)
     else
       render :edit
     end
@@ -57,7 +57,7 @@ class Back::PostsController < BackController
   end
 
   def set_user
-    @user = User.friendly.find(params[:user_id])
+    @user = current_user
   end
 
   def set_post
