@@ -1,0 +1,56 @@
+<!-- card -->
+<div class="bg-white flex flex-col md:flex-row overflow-hidden rounded shadow-xl my-6 w-100">
+  <!-- media -->
+  <div class="w-auto md:w-1/2">
+    <img src="https://source.unsplash.com/1600x1000/?nature,water">
+<!--    <%# if @post.main_image.attached? %>
+      <%#= image_tag @post.main_image, alt: @post.title, class: "inset-0 h-full w-full object-cover object-center"  %>
+    <%# end %>-->
+  </div>
+  <!-- content -->
+  <div class="w-full p-6 text-gray-800 flex flex-col justify-between">
+    <h3 class="font-semibold text-2xl leading-tight truncate">
+      <%= link_to @post.title, post_path(@post.slug) %>
+    </h3>
+    <p class="mt-2 text-justify">
+      <%= @post.excerpt %>
+    </p>
+    <div class="grid md:grid-cols-3">
+      <div>
+        <%= @post.user.pseudo.upcase %></div>
+      <div>
+        <%= helpers.localize(@post.created_at, :format => :date_time) %>
+      </div>
+      <div class="flex space-x-2">
+        <% if @post.comments_count.present? %>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+          </svg>
+          <span class="pl-1">
+            <%= @post.comments_count %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div><!--/ card-->
+
+
+<!--  <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <%# if @post.main_image.attached? %>
+      <%#= image_tag @post.main_image, alt: @post.title, class: "w-full"  %>
+    <%# end %>
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2"><%#= @post.title %></div>
+      <p class="text-gray-700 text-base">
+        <%#= @post.excerpt %>
+      </p>
+      <p class="text-sm text-gray-300"><%#= helpers.localize(@post.created_at, :format => :date_time) %></p>
+    </div>
+    <div class="px-6 pt-4 pb-2">
+      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+    </div>
+  </div>-->
