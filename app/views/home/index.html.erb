@@ -1,0 +1,17 @@
+<% content_for :meta_tags do %>
+<%= render MetaTagsComponent.new(meta_robots_index: true,
+                                 meta_robots_follow: true,
+                                 meta_title: "",
+                                 meta_description: "",
+                                 meta_type: "Website",
+                                 meta_image: "" ) %>
+<% end %>
+
+<article class="container w-100 flex flex-col max-w-5xl mx-auto my-6">
+  <!--<div class="p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">-->
+  <div class="my-6">
+    <% @posts.each do |post| %>
+      <%= render PostCardComponent.new(post: post) %>
+    <% end %>
+  </div>
+</article>
