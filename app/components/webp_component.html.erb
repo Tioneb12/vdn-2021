@@ -1,0 +1,11 @@
+<picture>
+  <source type="image/webp" srcset="<%= url_for(@photo.variant(resize_to_fill: [@width, @height], format: :webp)) %>">
+  <source type="<%= @photo.content_type%>" srcset="<%= url_for(@photo.variant(resize_to_fill: [@width, @height])) %>">
+  <img class="<%= @style_class %>"
+       data-original="<%= url_for(@photo) %>"
+       alt="<%= @alt %>"
+       title="<%= @title %>"
+       width ='<%= @width %>'
+       height ='<%= @height %>'
+       src='<%= url_for(@photo.variant(resize_to_fill: [@width, @height])) %>' />
+</picture>
