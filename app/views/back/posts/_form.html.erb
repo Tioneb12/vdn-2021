@@ -3,7 +3,7 @@
 <%= simple_form_for [:admin,@user,@post] do |f| %>
   <%= f.error_notification %>
   <%= f.input :title %>
-  <%#= f.input :main_image,
+  <%= f.input :main_image,
               direct_upload: true,
               accept: 'image/png,image/gif,image/jpeg' %>
   <%= f.input :body, as: :rich_text_area %>
