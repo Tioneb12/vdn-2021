@@ -1,0 +1,13 @@
+<div>
+  <% @post.comments.each do |comment| %>
+    <div class="my-4" id="<%=comment.id %>">
+      <p>
+        <%= helpers.link_if_website(comment.pseudo, comment.website) %>
+      </p>
+      <p class="text-sm text-gray-300"><%= helpers.localize(comment.created_at, :format => :date_time) %></p>
+      <div class="bg-gray-100 rounded p-2 border-black border-1">
+        <p><%= comment.comment %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
